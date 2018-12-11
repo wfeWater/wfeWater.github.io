@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="blog">
+<meta name="description" content="搭建神经网络(基于TensorFlow框架)工具:Ubuntu,TensorFlow框架 编程语言:Python 过程::Ubuntu安装,TensorFlow框架安装… 基本概念:所谓基于TensorFlow的NN(Neural Network)其实就是用张量表示数据,用计算图(Graph)搭建神经网络,用会话(Session)执行计算图,优化权重,最终得到模型 张量张量就是多维数组(列表),用">
 <meta name="keywords" content="学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wfeWater">
-<meta property="og:url" content="https://wfeWater.github.io/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建自己的神经网络">
+<meta property="og:url" content="https://wfeWater.github.io/2018/12/12/搭建自己的神经网络/index.html">
 <meta property="og:site_name" content="wfeWater">
-<meta property="og:description" content="blog">
+<meta property="og:description" content="搭建神经网络(基于TensorFlow框架)工具:Ubuntu,TensorFlow框架 编程语言:Python 过程::Ubuntu安装,TensorFlow框架安装… 基本概念:所谓基于TensorFlow的NN(Neural Network)其实就是用张量表示数据,用计算图(Graph)搭建神经网络,用会话(Session)执行计算图,优化权重,最终得到模型 张量张量就是多维数组(列表),用">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-11T12:31:57.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wfeWater">
-<meta name="twitter:description" content="blog">
+<meta name="twitter:title" content="搭建自己的神经网络">
+<meta name="twitter:description" content="搭建神经网络(基于TensorFlow框架)工具:Ubuntu,TensorFlow框架 编程语言:Python 过程::Ubuntu安装,TensorFlow框架安装… 基本概念:所谓基于TensorFlow的NN(Neural Network)其实就是用张量表示数据,用计算图(Graph)搭建神经网络,用会话(Session)执行计算图,优化权重,最终得到模型 张量张量就是多维数组(列表),用">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://wfeWater.github.io/"/>
+  <link rel="canonical" href="https://wfeWater.github.io/2018/12/12/搭建自己的神经网络/"/>
 
 
 
 
 
-  <title>wfeWater</title>
+  <title>搭建自己的神经网络 | wfeWater</title>
   
 
 
@@ -144,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -218,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -250,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/12/搭建自己的神经网络/" itemprop="url">搭建自己的神经网络</a></h1>
+          <h1 class="post-title" itemprop="name headline">搭建自己的神经网络</h1>
         
 
         <div class="post-meta">
@@ -302,9 +300,7 @@
       
 
       
-        
-          
-            <h1 id="搭建神经网络-基于TensorFlow框架"><a href="#搭建神经网络-基于TensorFlow框架" class="headerlink" title="搭建神经网络(基于TensorFlow框架)"></a>搭建神经网络(基于TensorFlow框架)</h1><p>工具:Ubuntu,TensorFlow框架</p>
+        <h1 id="搭建神经网络-基于TensorFlow框架"><a href="#搭建神经网络-基于TensorFlow框架" class="headerlink" title="搭建神经网络(基于TensorFlow框架)"></a>搭建神经网络(基于TensorFlow框架)</h1><p>工具:Ubuntu,TensorFlow框架</p>
 <p>编程语言:Python</p>
 <h2 id="过程"><a href="#过程" class="headerlink" title="过程:"></a>过程:</h2><p>:Ubuntu安装,TensorFlow框架安装…</p>
 <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念:"></a>基本概念:</h3><p>所谓基于TensorFlow的NN(Neural Network)其实就是用张量表示数据,用计算图(Graph)搭建神经网络,用会话(Session)执行计算图,优化权重,最终得到模型</p>
@@ -315,8 +311,6 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf			</span><br><span class="line">x = tf.constant([[<span class="number">1</span>,<span class="number">0</span>, <span class="number">2.0</span>]])</span><br><span class="line">w = tf.constant([[<span class="number">3.0</span>], [<span class="number">4.0</span>]])</span><br><span class="line">y = tf.matual(x, w)</span><br><span class="line"><span class="keyword">print</span> y</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:		<span class="comment">#用with结构实现</span></span><br><span class="line">    <span class="keyword">print</span> sess.run(y)			<span class="comment">#打印结果</span></span><br></pre></td></tr></table></figure>
 <p>到此为止,我们就搭建出了一个可以计算出结果的神经网络模型</p>
 
-          
-        
       
     </div>
     
@@ -333,12 +327,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -348,10 +342,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -359,6 +354,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -379,8 +378,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -422,6 +430,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建神经网络-基于TensorFlow框架"><span class="nav-number">1.</span> <span class="nav-text">搭建神经网络(基于TensorFlow框架)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">1.1.</span> <span class="nav-text">过程:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本概念:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#张量"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">张量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算图"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">计算图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#会话"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">会话</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -555,6 +579,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
